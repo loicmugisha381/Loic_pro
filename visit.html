@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visit Rwanda Guide</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background:#f4f4f4;
+      color:#333;
+    }
+
+    
+    header{
+      background:#008f5a;
+      color:white;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 60px;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    .logo-container{
+      display:flex;
+      align-items:center;
+      gap:15px;
+    }
+
+    .logo-circle{
+      width:60px;
+      height:60px;
+      border-radius:60%;
+      background:white;
+      overflow:hidden;
+      border:3px solid #00ff99;
+    }
+
+    .logo-circle img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .logo-text{
+      font-size:28px;
+      font-weight:bold;
+    }
+
+  
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:20px;
+      
+    }
+
+    nav ul li a{
+      text-decoration:none;
+      color:white;
+      background:rgba(255,255,255,0.15);
+      padding:10px 20px;
+      border-radius:6px;
+      transition:1.3s;
+    }
+
+    nav ul li a:hover{
+      background:white;
+      color:#008f5a;
+    }
+
+    
+    .hero{ width:100%;
+    height:100vh;
+
+    background-image:url("rwanda.jfif");
+
+  
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    text-align:center;
+}
+    
+
+    .hero-content h1{
+      font-size:60px;
+      margin-bottom:20px;
+    }
+
+    .hero-content p{
+      font-size:20px;
+      margin-bottom:25px;
+    }
+
+    .hero-content button{
+      padding:12px 25px;
+      border:none;
+      background:#00b36b;
+      color:white;
+      font-size:18px;
+      border-radius:8px;
+      cursor:pointer;
+      text-decoration: none;
+    }
+
+    .hero-content button:hover{
+      background:white;
+      color:#008f5a;
+    }
+
+    
+    .info-sections{
+      display:flex;
+      justify-content:center;
+      gap:30px;
+      padding:60px 40px;
+      flex-wrap:wrap;
+      background:rgb(251, 252, 251);
+    }
+
+    .card{
+      width:350px;
+      background:#fff;
+      border-radius:15px;
+      overflow:hidden;
+      box-shadow:0 4px 15px rgba(0,0,0,0.2);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+    }
+
+    .card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .card-content{
+      padding:20px;
+    }
+
+    .card-content h2{
+      color:#008f5a;
+      margin-bottom:15px;
+    }
+
+    .card-content p{
+      font-size:16px;
+      line-height:1.6;
+    }
+
+    
+    footer{
+      background:#111;
+      color:white;
+      text-align:center;
+      padding:20px;
+    }
+
+    
+    @media(max-width:768px){
+
+      header{
+        flex-direction:column;
+        gap:15px;
+        padding:20px;
+      }
+
+      nav ul{
+        flex-direction:column;
+        text-align:center;
+      }
+
+      .hero-content h1{
+        font-size:40px;
+      }
+
+      .hero-content p{
+        font-size:18px;
+      }
+    }
+    button{
+      background-color:green  ;
+      color: white;
+      height: 40px;
+      width: 280px;
+      border-color: #00ff99;
+      border-radius: 40%;
+    }
+ 
+
+  </style>
+</head>
+
+<body>
+
+
+  <header>
+
+    <div class="logo-container">
+          
+      <div class="logo-circle">
+    
+        <img src="logo.png" alt="logo">
+      </div>
+      <div class="logo-text">Visit Rwanda Guide</div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="visit.html">Home</a></li>
+        <li><a href="guide.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="hero" style="background-image:url('rwanda.jfif') ">
+    <div class="hero-content">
+      <h1>Welcome to Rwanda</h1>
+      <p>Discover beautiful places, hotels, culture and tourism in Rwanda.</p>
+      <button onclick="showMessage()">Explore Now</button>
+    </div>
+  </section>
+  <h1 style=" text-align: center;">START YOUR JOURNEY</h1>
+ <section class="info-sections">  
+  <div class="card">
+    <img src="more about tour.jfif">
+
+    <div class="card-content">
+      
+     
+      <p>
+        Explore Rwanda’s mountains, national parks, lakes and wildlife adventures.
+      </p>
+       <button onclick="location.href='toursite.html'">MORE ABOUT TOUR SITES</button>
+    </div>
+  </div>
+
+  
+  <div class="card">
+    <img src="more about culture.jfif">
+
+    <div class="card-content">
+      
+      <p>
+        Discover traditional dances, heritage, local food and Rwandan traditions.
+      </p>
+       <button onclick="location.href='culture.html'">MORE ABOUT CULTURE</button>
+    </div>
+  </div>
+  
+
+</section>
+<marquee behavior="" direction="left"><h1 style=" font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: darkgreen; ">FOR MORE INFORMATION CLICK ON GREEN BUTTON INSIDE THE IMAGE AREA </h1></marquee>
+
+  <footer>
+    <h1 style="color: #0ae921;">visitrwandaguide@gmail.com</h1>
+  </footer>
+
+  <script>
+    function showMessage(){
+      alert("FOR MORE DETAILS ABOUT YOUR TOUR CLICK ON GREEN BUTTON INSIDE THE IMAGE AREA");
+    }
+   
+  
+  </script>
+
+</body>
+</html>

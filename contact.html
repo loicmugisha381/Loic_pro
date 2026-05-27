@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact Us - Rwanda Tourism</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background:#f4f4f4;
+      color:#333;
+    }
+
+  
+    header{
+      background:#006400;
+      padding:15px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      color:white;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .logo img{
+      width:50px;
+      height:50px;
+      border-radius:50%;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin-left:20px;
+      font-weight:bold;
+      transition:1.3s;
+    }
+
+    nav a:hover{
+      color:#f60909f1;
+    }
+
+  
+    .banner{
+       width:100%;
+    height:100vh;
+
+    
+
+    
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    text-align:center;
+    }
+
+    .banner h1{
+      background:rgba(0,0,0,0.6);
+      padding:20px;
+      border-radius:10px;
+      font-size:40px;
+    }
+
+    
+    .container{
+      width:85%;
+      margin:40px auto;
+    }
+
+    .section-title{
+      text-align:center;
+      color:#006400;
+      margin-bottom:30px;
+      font-size:35px;
+    }
+
+  
+    .table-box{
+      background:white;
+      padding:25px;
+      border-radius:10px;
+      margin-bottom:40px;
+      box-shadow:0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .table-box h2{
+      margin-bottom:20px;
+      color:#006400;
+      text-align:center;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+    }
+
+    table th{
+      background:#006400;
+      color:white;
+      padding:15px;
+      text-align:left;
+    }
+
+    table td{
+      padding:15px;
+      border-bottom:1px solid #ddd;
+    }
+
+    table tr:hover{
+      background:#f1f1f1;
+    }
+
+
+    footer{
+      background:#006400;
+      color:white;
+      text-align:center;
+      padding:20px;
+      margin-top:40px;
+    }
+
+    @media(max-width:768px){
+
+      header{
+        flex-direction:column;
+      }
+
+      nav{
+        margin-top:10px;
+      }
+
+      .banner h1{
+        font-size:28px;
+      }
+
+      table{
+        font-size:14px;
+      }
+    }
+      .back-btn{
+  background:#0ceb0c;
+  color:white;
+  border:none;
+  padding:12px 22px;
+  font-size:18px;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.back-btn:hover{
+  background:#d50647;
+  transform:scale(1.05);
+}
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial;
+    }
+
+    body{
+      background:#f4f4f4;
+    }
+
+    .contact-container{
+      width:90%;
+      max-width:600px;
+      background:white;
+      margin:50px auto;
+      padding:30px;
+      border-radius:10px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h1{
+      text-align:center;
+      margin-bottom:20px;
+      color:#006400;
+    }
+
+    input,
+    textarea{
+      width:100%;
+      padding:12px;
+      margin-bottom:15px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size:16px;
+    }
+
+    textarea{
+      height:150px;
+      resize:none;
+    }
+
+    
+  </style>
+</head>
+<body>
+
+  
+  <header>
+
+    <div class="logo">
+            <button class="back-btn" id="backButton">
+  ← Back
+</button>
+      <img src="logo.png" alt="Logo">
+      <h2>Rwanda Tourism</h2>
+    </div>
+
+    <nav>
+      <a href="visit.html">Home</a>
+      <a href="guide.html">About</a>
+    </nav>
+
+  </header>
+
+
+  <section class="banner" style="background-image:url(pnone.webp) ;" >
+    <h1 style="color: yellowgreen; font-family: fantasy;"> CONTACT US</h1>
+  </section>
+
+  <div class="container">
+
+    <h1 class="section-title">WELCOME TO CONTACT AREA</h1>
+
+    <!-- CONTACT TABLE -->
+    <div class="table-box">
+
+      <h2>Contact Information</h2>
+
+      <table>
+        <tr>
+          <th>Department</th>
+          <th>Phone Number</th>
+          
+        </tr>
+
+        <tr>
+          <td>Customer Support</td>
+          <td>+250 788 123 456</td>
+          
+        </tr>
+
+        <tr>
+          <td>Tour Guide Office</td>
+          <td>+250 789 654 321</td>
+          
+        </tr>
+
+        <tr>
+          <td>Booking Office</td>
+          <td>+250 780 111 222</td>
+          
+        </tr>
+      </table>
+
+    </div>
+
+    <!-- SOCIAL MEDIA TABLE -->
+    <div class="table-box">
+
+      <h2>Social Media Platforms</h2>
+
+      <table>
+        <tr>
+          <th>Platform</th>
+          <th>Username</th>
+          
+        </tr>
+
+        <tr>
+          <td>Facebook</td>
+          <td>@RwandaTourism</td>
+          
+        </tr>
+
+        <tr>
+          <td>Instagram</td>
+          <td>@VisitRwanda</td>
+          
+        </tr>
+
+        <tr>
+          <td>Twitter / X</td>
+          <td>@VisitRwandaNow</td>
+        
+        </tr>
+
+        <tr>
+          <td>YouTube</td>
+          <td>Rwanda Tourism Channel</td>
+          
+        </tr>
+      </table>
+
+    </div>
+
+  </div>
+  <h1 style="text-align: center; color: lime;">DIRECT MESSAGES</h1>
+   <div class="contact-container">
+
+    <h1>Contact Us</h1>
+    <form action="">
+
+    <input type="text" id="name"placeholder="Your Name", required name="n1">
+
+    <input type="email"id="email"placeholder="Your Email" required name="n2">
+
+    <textarea
+    id="message"
+    placeholder="Write Message" required name="n3"></textarea>
+
+    <input type="button" value="Send Message" onclick="sendMessage()" style="
+      width:100%;
+      padding:12px;
+      background:#006400;
+      color:white;
+      border:none;
+      border-radius:5px;
+      font-size:18px;
+      cursor:pointer;
+      background:#004d00;
+    ">
+    
+    
+    </div>
+</form>
+  <footer>
+    <h1 style="color: #0ae921;">visitrwandaguide@gmail.com</h1>
+  </footer>
+  <script>
+    const backButton = document.getElementById("backButton");
+
+backButton.addEventListener("click", function () {
+  window.history.back();
+});
+
+    emailjs.init("qE0YxEtJyG3dsGBXp");
+
+    function sendMessage(){
+
+      alert("YOUR MESSAGE WAS SUCCESSFULLY SEND TO loicmugisha381@gmail.com");
+
+    }
+  </script>
+
+</body>
+</html>

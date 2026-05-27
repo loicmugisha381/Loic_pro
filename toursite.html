@@ -1,0 +1,821 @@
+\<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Visit Rwanda Guide</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#f4f4f4;
+      color:#333;
+      line-height:1.6;
+    }
+
+    
+    header{
+      background:#006400;
+      padding:15px 0;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    nav{
+      width:90%;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo-area{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .logo-area img{
+      width:55px;
+      height:55px;
+      border-radius:50%;
+      object-fit:cover;
+      border:2px solid white;
+    }
+
+    .logo{
+      color:white;
+      font-size:28px;
+      font-weight:bold;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+    }
+
+    nav ul li{
+      margin-left:20px;
+    }
+
+    nav ul li a{
+      color:white;
+      text-decoration:none;
+      font-size:18px;
+      transition:1.3s;
+    }
+
+    nav ul li a:hover{
+      color:rgb(255, 0, 157);
+    }
+
+    
+    .banner{
+      background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    text-align:center;
+    }
+
+    .banner-content{
+      background:rgba(0,0,0,0.5);
+      padding:30px;
+      border-radius:10px;
+    }
+
+    .banner h1{
+      font-size:50px;
+      margin-bottom:10px;
+    }
+
+    .banner p{
+      font-size:22px;
+    }
+
+    button{
+      margin-top:20px;
+      padding:12px 25px;
+      border:none;
+      background:yellow;
+      font-size:18px;
+      cursor:pointer;
+      border-radius:5px;
+      transition:0.3s;
+    }
+
+    button:hover{
+      background:white;
+    }
+
+    
+    .section{
+      width:90%;
+      margin:60px auto;
+    }
+
+    .section h2{
+      text-align:center;
+      color:#006400;
+      margin-bottom:30px;
+      font-size:36px;
+    }
+
+    
+    .image-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+      gap:25px;
+    }
+
+
+    .image-box{
+      background:white;
+      border-radius:12px;
+      overflow:hidden;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      transition:0.3s;
+    }
+
+    .image-box:hover{
+      transform:translateY(-5px);
+    }
+
+    .image-box img{
+      width:100%;
+      height:230px;
+      object-fit:cover;
+    }
+
+    .image-box h3{
+      color:#006400;
+      text-align:center;
+      padding-top:15px;
+      font-size:24px;
+    }
+
+    .image-box p{
+      padding:15px;
+      text-align:justify;
+      font-size:15px;
+    }
+
+  
+    footer{
+      background:#006400;
+      color:white;
+      text-align:center;
+      padding:20px;
+      margin-top:50px;
+    }
+
+    
+    @media(max-width:768px){
+
+      nav{
+        flex-direction:column;
+      }
+
+      nav ul{
+        margin-top:10px;
+      }
+
+      .banner h1{
+        font-size:35px;
+      }
+
+    }
+     
+    .back-btn{
+  background:#32ee03e3;
+  color:white;
+  border:none;
+  padding:12px 22px;
+  font-size:18px;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.back-btn:hover{
+  background:#d3de0b;
+  transform:scale(1.07);
+}
+
+  </style>
+</head>
+
+<body>
+
+
+<header>
+  <nav>
+
+    <div class="logo-area">
+      <button class="back-btn" id="backButton">
+  ← Back
+</button>
+      <img src="logo.png" alt="Logo">
+      <div class="logo">Visit Rwanda Guide</div>
+    </div>
+
+    <ul>
+      <li><a href="visit.html">Home</a></li>
+      <li><a href="guide.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+  </nav>
+</header>
+
+
+<section class="banner">
+  <div class="banner-content" style="background-image:url('tourist.jpg') ;height: 500px;width: 1350px;">
+    <h1>Welcome to Rwanda</h1>
+    <p>Explore the Land of a Thousand Hills</p>
+
+    <button onclick="showMessage()">Visit Now</button>
+  </div>
+</section>
+
+
+<section class="section">
+
+  <h2>Rwanda Province Cities</h2>
+
+  <div class="image-container">
+
+    <div class="image-box">
+      <img src="kigali.jfif" alt="">
+      <h3>Kigali City</h3>
+      <p>
+        Kigali is the capital city of Rwanda.
+        It is known for cleanliness and security.
+        The city has modern buildings and roads.
+        Kigali is a center for business and tourism.
+        Visitors enjoy restaurants and museums.
+        The environment is peaceful and organized.
+        Kigali is one of Africa’s fastest growing cities.
+      </p>
+    </div>
+
+    <div class="image-box">
+      <img src="musanze.jfif" alt="">
+      <h3>Northern Province</h3>
+      <p>
+        Northern Province is famous for gorillas.
+        It has beautiful mountains and cool weather.
+        Volcanoes National Park is located here.
+        Tourists visit to hike and explore nature.
+        The province has rich Rwandan culture.
+        Farming is an important activity here.
+        It is one of Rwanda’s tourist destinations.
+      </p>
+    </div>
+
+    <div class="image-box">
+      <img src="nyanza.jfif" alt="">
+      <h3>Southern Province</h3>
+      <p>
+        Southern Province is home to Nyungwe Forest.
+        It has rich wildlife and natural beauty.
+        Many tourists enjoy canopy walks here.
+        The area has historical and cultural sites.
+        Tea plantations are also common here.
+        The climate is cool and attractive.
+        Southern Province supports eco-tourism activities.
+      </p>
+    </div>
+
+    <div class="image-box">
+      <img src="rwamagana.jfif" alt="">
+      <h3>Eastern Province</h3>
+      <p>
+        Eastern Province is known for Akagera Park.
+        The province has savannah landscapes.
+        Visitors enjoy wildlife safaris and boat tours.
+        It is home to elephants and lions.
+        Agriculture is widely practiced in the region.
+        Lakes and rivers are also found here.
+        The province attracts many tourists yearly.
+      </p>
+    </div>
+
+    <div class="image-box">
+      <img src="karongi.jfif" alt="">
+      <h3>Western Province</h3>
+      <p>
+        Western Province is famous for Lake Kivu.
+        The area has beautiful green hills.
+        Visitors enjoy beaches and boat rides.
+        Fishing is important to local communities.
+        The province has relaxing tourist resorts.
+        Mountains and forests surround the lake.
+        It is one of Rwanda’s scenic regions.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section">
+
+  <h2>Mountains and Hills</h2>
+
+  <div class="image-container">
+
+    <div class="image-box">
+      <img src="karisimbi.jfif">
+      <h3>Mount Karisimbi</h3>
+      <p>
+        Mount Karisimbi is Rwanda’s highest mountain.
+        It is located in the Virunga ranges.
+        The mountain attracts hikers every year.
+        The summit is often covered with snow.
+        It has beautiful volcanic scenery.
+        Tourists enjoy adventure and photography.
+        Karisimbi is a major tourist attraction.
+      </p>
+    </div>
+
+    <div class="image-box">
+      <img src="bisoke.jfif">
+      <h3>Mount Bisoke</h3>
+      <p>
+        Mount Bisoke is an active volcano.
+        It is located near Volcanoes National Park.
+        The mountain has a crater lake.
+        Hiking Bisoke is popular among tourists.
+        The trail passes through green forests.
+        Visitors sometimes see mountain gorillas.
+        It offers amazing views of Rwanda.
+      </p>
+    </div>
+
+    <div class="image-box">
+      <img src="hills.jfif">
+      <h3>Rwanda Hills</h3>
+      <p>
+        Rwanda is called the land of hills.
+        The hills create beautiful landscapes.
+        Many communities live on these hills.
+        Farming is practiced on hill terraces.
+        The green scenery attracts visitors.
+        Hills are found across the country.
+        They symbolize Rwanda’s natural beauty.
+      </p>
+    </div>
+
+    <div class="image-box">
+      <img src="virunga.jfif">
+      <h3>Virunga Mountains</h3>
+      <p>
+        Virunga Mountains are shared by countries.
+        Rwanda hosts part of this mountain chain.
+        The mountains contain volcanic peaks.
+        They are home to mountain gorillas.
+        The forests are rich in biodiversity.
+        Tourists visit for trekking adventures.
+        The area is protected for conservation.
+      </p>
+    </div>
+
+    <div class="image-box">
+      <img src="buberuka.jfif">
+      <h3>Buberuka Highlands</h3>
+      <p>
+        Buberuka Highlands are found in northern Rwanda.
+        The region has cool temperatures.
+        Farmers grow crops on the slopes.
+        The area offers beautiful viewpoints.
+        Green vegetation covers the highlands.
+        Tourists enjoy hiking and sightseeing.
+        The highlands support rural communities.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <h2>Lakes and Rivers</h2>
+
+  <div class="image-container">
+
+    <div class="image-box">
+      <img src="kivu lake.jfif">
+      <h3>Lake Kivu</h3>
+      <p>
+        Lake Kivu is one of Africa’s great lakes.
+        It lies between Rwanda and Congo.
+        Visitors enjoy beaches and swimming.
+        Boat rides are common on the lake.
+        Fishing supports local communities.
+        The lake has beautiful sunset views.
+        It is a famous tourist destination.
+      </p>
+    </div>
+
+    <div class="image-box">
+      <img src="muhazi.jfif">
+      <h3>Lake Muhazi</h3>
+      <p>
+        Lake Muhazi is located in eastern Rwanda.
+        It has calm and peaceful waters.
+        Visitors enjoy fishing and relaxation.
+        Hotels and resorts surround the lake.
+        The area is rich in bird species.
+        It is perfect for weekend vacations.
+        Lake Muhazi attracts many local tourists.
+      </p>
+    </div>
+
+    <div class="image-box">
+      <img src="akanyaru.jfif">
+      <h3>Akanyaru River</h3>
+      <p>
+        Akanyaru River forms part of Rwanda’s border.
+        The river supports farming activities.
+        It provides water to nearby communities.
+        Wetlands are found around the river.
+        Birds and wildlife live in the area.
+        The river contributes to Rwanda’s ecosystem.
+        It is important for environmental conservation.
+      </p>
+    </div>
+
+    <div class="image-box">
+      <img src="lake ihema.jfif">
+      <h3>Lake Ihema</h3>
+      <p>
+        Lake Ihema is located in Akagera Park.
+        It is known for hippos and crocodiles.
+        Boat tours are popular on the lake.
+        Many birds live near the water.
+        The scenery is calm and attractive.
+        Tourists enjoy wildlife viewing here.
+        The lake supports eco-tourism in Rwanda.
+      </p>
+    </div>
+
+    <div class="image-box">
+      <img src="nybarongo.jfif">
+      <h3>Nyabarongo River</h3>
+      <p>
+        Nyabarongo River is Rwanda’s longest river.
+        It flows through different regions.
+        The river supports farming and fishing.
+        Wetlands around it are environmentally important.
+        Many communities depend on its water.
+        It later joins the Nile River system.
+        The river is important to Rwanda’s geography.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+<section class="section">
+
+  <h2>National Parks</h2>
+
+  <div class="image-container">
+
+    <div class="image-box">
+      <img src="akagera.jfif">
+      <h3>Akagera National Park</h3>
+      <p>
+        Akagera National Park is in eastern Rwanda.
+        It is famous for wildlife safaris.
+        Lions and elephants live in the park.
+        Visitors enjoy game drives and boat tours.
+        The park has lakes and savannah plains.
+        It supports wildlife conservation efforts.
+        Akagera is a major tourist attraction.
+      </p>
+    </div>
+
+    <div class="image-box">
+      <img src="ingagi.jfif">
+      <h3>Volcanoes National Park</h3>
+      <p>
+        Volcanoes National Park protects mountain gorillas.
+        It is located in northern Rwanda.
+        Tourists visit for gorilla trekking.
+        The park has volcanic mountains and forests.
+        Rare animals live in this area.
+        Conservation activities are strongly promoted.
+        It is Rwanda’s most famous national park.
+      </p>
+    </div>
+
+    <div class="image-box">
+      <img src="nyungwe.jfif">
+      <h3>Nyungwe National Park</h3>
+      <p>
+        Nyungwe National Park is a rainforest reserve.
+        It contains many species of primates.
+        Visitors enjoy canopy walk adventures.
+        The forest has waterfalls and trails.
+        Birdwatching is popular in the park.
+        Scientists study biodiversity in Nyungwe.
+        It is one of Africa’s oldest forests.
+      </p>
+    </div>
+
+    <div class="image-box">
+      <img src="gishwati.jfif">
+      <h3>Gishwati Park</h3>
+      <p>
+        Gishwati Park is a protected forest area.
+        It supports chimpanzees and monkeys.
+        The forest helps protect the environment.
+        Tourists visit for eco-tourism activities.
+        Hiking trails pass through the forest.
+        Conservation projects are active here.
+        Gishwati improves Rwanda’s biodiversity protection.
+      </p>
+    </div>
+
+    <div class="image-box">
+      <img src="forest5.jfif">
+      <h3>Mukura Forest</h3>
+      <p>
+        Mukura Forest is a natural protected reserve.
+        It contains many plant and bird species.
+        The forest contributes to clean air.
+        Researchers study wildlife in the forest.
+        Eco-tourism activities are increasing here.
+        Local communities benefit from conservation.
+        Mukura is important to Rwanda’s environment.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section">
+
+  <h2>Volcanoes</h2>
+
+  <div class="image-container">
+
+    <div class="image-box">
+      <img src="bisoke.jfif">
+      <h3>Mount Bisoke</h3>
+      <p>
+        Mount Bisoke is a volcanic mountain.
+        It contains a beautiful crater lake.
+        Tourists enjoy hiking to the summit.
+        The volcano lies in the Virunga chain.
+        Forests surround the mountain slopes.
+        Wildlife lives in nearby protected areas.
+        Bisoke offers breathtaking natural scenery.
+      </p>
+    </div>
+
+    <div class="image-box">
+      <img src="volcano.jfif">
+      <h3>Mount Karisimbi</h3>
+      <p>
+        Karisimbi is the highest volcano in Rwanda.
+        It is part of the Virunga Mountains.
+        Hiking takes about two days.
+        The mountain has cold temperatures.
+        Forests cover the lower slopes.
+        Trekkers enjoy panoramic views here.
+        Karisimbi is popular with adventurers.
+      </p>
+    </div>
+
+    <div class="image-box">
+      <img src="muhabura.jfif">
+      <h3>Mount Muhabura</h3>
+      <p>
+        Mount Muhabura is a volcanic mountain.
+        It lies on the Rwanda-Uganda border.
+        The volcano has steep hiking trails.
+        Visitors enjoy scenic mountain views.
+        It supports tourism in northern Rwanda.
+        The environment is cool and green.
+        Muhabura is part of the Virunga range.
+      </p>
+    </div>
+
+    <div class="image-box">
+      <img src="sabyinyo.jfif">
+      <h3>Mount Sabyinyo</h3>
+      <p>
+        Mount Sabyinyo is an extinct volcano.
+        It has rugged peaks and ridges.
+        Hiking requires physical fitness and guides.
+        The volcano borders three countries.
+        Mountain gorillas live near the area.
+        Tourists enjoy adventure tourism activities.
+        Sabyinyo offers amazing mountain landscapes.
+      </p>
+    </div>
+
+    <div class="image-box">
+      <img src="gahinga.jfif">
+      <h3>Mount Gahinga</h3>
+      <p>
+        Mount Gahinga is a dormant volcano.
+        It has bamboo forests on its slopes.
+        The mountain supports wildlife habitats.
+        Hiking is a common tourist activity.
+        Visitors enjoy cool mountain weather.
+        It is part of the Virunga chain.
+        Gahinga contributes to Rwanda tourism.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section">
+
+  <h2>Memorial Sites</h2>
+
+  <div class="image-container">
+
+    <div class="image-box">
+      <img src="memorial 2.jfif">
+      <h3>Kigali Memorial</h3>
+      <p>
+        Kigali Genocide Memorial honors genocide victims.
+        It educates visitors about Rwanda’s history.
+        Many people visit to pay respect.
+        The memorial promotes peace and unity.
+        Exhibitions explain historical events clearly.
+        It is an important learning center.
+        The site symbolizes remembrance and hope.
+      </p>
+    </div>
+
+    <div class="image-box">
+      <img src="murambi.jfif">
+      <h3>Murambi Memorial</h3>
+      <p>
+        Murambi Memorial remembers genocide victims.
+        The site preserves historical evidence.
+        Visitors learn about Rwanda’s tragic past.
+        Guides explain events during memorial tours.
+        The memorial promotes reconciliation and healing.
+        Many schools visit for education purposes.
+        It is one of Rwanda’s memorial centers.
+      </p>
+    </div>
+
+    <div class="image-box">
+      <img src="ntarama.jfif">
+      <h3>Ntarama Memorial</h3>
+      <p>
+        Ntarama Memorial is located near Kigali.
+        It preserves memories of genocide victims.
+        The church building remains historically important.
+        Visitors reflect on Rwanda’s past here.
+        Educational programs are offered at the site.
+        The memorial encourages peace and unity.
+        It is a place of remembrance.
+      </p>
+    </div>
+
+    <div class="image-box">
+      <img src="nyamata memorial.jfif">
+      <h3>Nyamata Memorial</h3>
+      <p>
+        Nyamata Memorial is a historical site.
+        It commemorates victims of the genocide.
+        The church contains preserved historical items.
+        Visitors come to learn and remember.
+        The memorial teaches lessons of humanity.
+        Peace education programs are conducted here.
+        It is an important national memorial.
+      </p>
+    </div>
+
+    <div class="image-box">
+      <img src="bisesero.jfif">
+      <h3>Bisesero Memorial</h3>
+      <p>
+        Bisesero Memorial honors resistance and courage.
+        The site remembers genocide victims respectfully.
+        Hills around the area are symbolic.
+        Visitors learn about Rwanda’s resilience.
+        Memorial ceremonies are held regularly.
+        The site promotes national unity.
+        Bisesero remains historically important in Rwanda.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+<section class="section">
+
+  <h2>GORILLAS</h2>
+
+  <div class="image-container">
+
+    <div class="image-box">
+      <img src="little.jpg">
+      <h3>Little gorillas</h3>
+      <p>
+        Mountain gorillas are rare animals found in the forests of Rwanda, especially in Volcanoes National Park.
+They live in families led by a strong silverback gorilla who protects the group.
+Gorillas are peaceful animals that eat plants, fruits, and leaves.
+Many tourists visit Rwanda to see mountain gorillas in their natural environment.
+Gorilla tourism helps protect wildlife and supports Rwanda’s economy.
+These animals are an important symbol of Rwanda’s natural beauty and conservation efforts.
+
+      </p>
+    </div>
+
+    <div class="image-box">
+      <img src="MALE.jpg">
+      <h3>SILVERBACKS GOORILLAS</h3>
+      <p>
+        Male gorillas are called silverbacks because they develop silver hair on their backs as they grow older.
+A silverback is the leader of the gorilla family and protects all members of the group.
+Male gorillas are very strong and can defend their families from danger.
+They help guide the group to places with food, water, and safe shelter.
+Although they are powerful animals, silverbacks are usually calm and peaceful.
+Male gorillas are important for the survival and unity of gorilla families in the wild.
+
+      </p>
+    </div>
+
+    <div class="image-box">
+      <img src="female.jpg">
+      <h3>FEMALE GORILLA</h3>
+      <p>
+        Female gorillas are caring animals that help raise and protect their babies.
+They live together in family groups led by a silverback male gorilla.
+Female gorillas spend much of their time feeding, resting, and caring for young gorillas.
+They are gentle and peaceful animals that help keep the group united.
+Mother gorillas carry and protect their babies for several years as they grow.
+Female gorillas play an important role in the survival and growth of gorilla families.
+
+      </p>
+    </div>
+
+    <div class="image-box">
+      <img src="cross.jpg">
+      <h3>CROSS RIVER GORILLAS</h3>
+      <p>
+        Cross River Gorillas are one of the rarest gorilla species in the world.
+They live in forests near the border of Nigeria and Cameroon in Africa.
+These gorillas are shy animals and avoid places with many people.
+Cross River Gorillas are endangered because of hunting and destruction of forests.
+Conservation programs are helping protect them and their natural habitat.
+
+      </p>
+    </div>
+
+</section>
+
+
+<footer>
+  <h1 style="color: #0ae921;">visitrwandaguide@gmail.com</h1>
+</footer>
+
+<script>
+
+  function showMessage(){
+    alert("WELCOME TO TOURSITE AREA! HAVE NICE TOUR");
+  }
+
+    const backButton = document.getElementById("backButton");
+
+backButton.addEventListener("click", function () {
+  window.history.back();
+});
+  
+
+</script>
+
+</body>
+</html>
