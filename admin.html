@@ -1,0 +1,636 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit Rwanda - Admin Dashboard</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f6f9;
+            color: #333;
+        }
+
+        /* LOGIN */
+        .login-container {
+            width: 90%;
+            max-width: 400px;
+            margin: 100px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #087f5b;
+        }
+
+        /* DASHBOARD */
+        .dashboard {
+            display: none;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: #064e3b;
+            color: white;
+            position: fixed;
+            height: 100%;
+            padding: 25px 15px;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 35px;
+            font-size: 21px;
+        }
+
+        .sidebar button {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 10px;
+            background: transparent;
+            color: white;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        .sidebar button:hover {
+            background: #087f5b;
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 30px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            gap: 15px;
+        }
+
+        header h1 {
+            color: #064e3b;
+        }
+
+        .section {
+            display: none;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section h2 {
+            margin-bottom: 20px;
+            color: #087f5b;
+        }
+
+        /* FORMS */
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 18px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            background: #087f5b;
+            color: white;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #064e3b;
+        }
+
+        .logout {
+            background: #dc3545;
+        }
+
+        .logout:hover {
+            background: #a71d2a;
+        }
+
+        .delete-btn {
+            background: #dc3545;
+            margin-left: 8px;
+        }
+
+        .edit-btn {
+            background: #e0a800;
+            color: #222;
+        }
+
+        /* CONTENT LIST */
+        .content-item {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+        }
+
+        .content-item img,
+        .content-item video {
+            width: 180px;
+            max-width: 100%;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .content-item h3 {
+            color: #064e3b;
+            margin-bottom: 8px;
+        }
+
+        .message-item {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .status {
+            margin-bottom: 15px;
+            color: #087f5b;
+        }
+
+        @media(max-width: 750px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .sidebar h2 {
+                margin-bottom: 15px;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 15px;
+            }
+
+            .sidebar button {
+                width: 48%;
+            }
+
+            header {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ADMIN LOGIN -->
+    <div class="login-container" id="loginContainer">
+        <h2>Visit Rwanda Admin</h2>
+
+        <form id="loginForm">
+            <label>Username</label>
+            <input type="text" id="username" required>
+
+            <label>Password</label>
+            <input type="password" id="password" required>
+
+            <button type="submit" class="btn" style="width:100%">
+                Login
+            </button>
+        </form>
+
+        <p id="loginStatus" class="status"></p>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div class="dashboard" id="dashboard">
+
+        <aside class="sidebar">
+            <h2>Visit Rwanda</h2>
+
+            <button onclick="showSection('overview')">Dashboard</button>
+            <button onclick="showSection('addContent')">Add Content</button>
+            <button onclick="showSection('manageContent')">Manage Content</button>
+            <button onclick="showSection('messages')">Visitor Messages</button>
+            <button onclick="logout()" class="logout">Logout</button>
+        </aside>
+
+        <main class="main-content">
+
+            <header>
+                <h1>Admin Dashboard</h1>
+                <p>GROUP ONE</p>
+            </header>
+
+            <!-- OVERVIEW -->
+            <section id="overview" class="section active">
+                <h2>Welcome Administrator</h2>
+                <p>
+                    Manage the information displayed on the Visit Rwanda
+                    Guide Website from this dashboard.
+                </p>
+            </section>
+
+            <!-- ADD CONTENT -->
+            <section id="addContent" class="section">
+                <h2>Add Website Content</h2>
+
+                <form id="contentForm" enctype="multipart/form-data">
+
+                    <label>Select Website Page</label>
+                    <select name="page" required>
+                        <option value="home">Home Page</option>
+                        <option value="about">About Page</option>
+                        <option value="culture">Culture Page</option>
+                        <option value="toursite">Tourist Sites Page</option>
+                    </select>
+
+                    <label>Content Title</label>
+                    <input type="text" name="title"
+                           placeholder="Enter title" required>
+
+                    <label>Description</label>
+                    <textarea name="description"
+                              placeholder="Enter description"
+                              required></textarea>
+
+                    <label>Location</label>
+                    <input type="text" name="location"
+                           placeholder="Enter location">
+
+                    <label>Category</label>
+                    <input type="text" name="category"
+                           placeholder="Example: National Park">
+
+                    <label>Upload Image</label>
+                    <input type="file" name="image"
+                           accept="image/*">
+
+                    <label>Upload Video</label>
+                    <input type="file" name="video"
+                           accept="video/*">
+
+                    <button type="submit" class="btn">
+                        Save Content
+                    </button>
+                </form>
+
+                <p id="contentStatus" class="status"></p>
+            </section>
+
+            <!-- MANAGE CONTENT -->
+            <section id="manageContent" class="section">
+                <h2>Manage Website Content</h2>
+
+                <label>Filter by page</label>
+                <select id="filterPage">
+                    <option value="all">All Pages</option>
+                    <option value="home">Home</option>
+                    <option value="about">About</option>
+                    <option value="culture">Culture</option>
+                    <option value="toursite">TourSite</option>
+                </select>
+
+                <div id="contentList">
+                    Loading content...
+                </div>
+            </section>
+
+            <!-- MESSAGES -->
+            <section id="messages" class="section">
+                <h2>Visitor Messages</h2>
+                <div id="messageList">
+                    Loading messages...
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        const API = "/api";
+
+        // SHOW DASHBOARD SECTION
+        function showSection(sectionId) {
+            document.querySelectorAll(".section").forEach(section => {
+                section.classList.remove("active");
+            });
+
+            document.getElementById(sectionId).classList.add("active");
+
+            if (sectionId === "manageContent") loadContent();
+            if (sectionId === "messages") loadMessages();
+        }
+
+        // API REQUEST HELPER
+        async function apiRequest(url, options = {}) {
+            const response = await fetch(API + url, {
+                credentials: "same-origin",
+                ...options
+            });
+
+            const data = await response.json().catch(() => ({}));
+
+            if (!response.ok) {
+                throw new Error(data.message || data.error || "Request failed");
+            }
+
+            return data;
+        }
+
+        // CHECK EXISTING LOGIN SESSION
+        async function checkLogin() {
+            try {
+                await apiRequest("/admin/me");
+                openDashboard();
+            } catch {
+                document.getElementById("loginContainer").style.display = "block";
+                document.getElementById("dashboard").style.display = "none";
+            }
+        }
+
+        function openDashboard() {
+            document.getElementById("loginContainer").style.display = "none";
+            document.getElementById("dashboard").style.display = "block";
+        }
+
+        // ADMIN LOGIN
+        document.getElementById("loginForm").addEventListener("submit", async function(e) {
+            e.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const status = document.getElementById("loginStatus");
+
+            status.textContent = "Logging in...";
+
+            try {
+                await apiRequest("/admin/login", {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify({username, password})
+                });
+
+                status.textContent = "";
+                openDashboard();
+            } catch(error) {
+                status.textContent = error.message;
+            }
+        });
+
+        // LOGOUT
+        async function logout() {
+            try {
+                await apiRequest("/admin/logout", {method: "POST"});
+            } catch(error) {
+                alert(error.message);
+            }
+
+            location.reload();
+        }
+
+        // ADD CONTENT
+        document.getElementById("contentForm").addEventListener("submit", async function(e) {
+            e.preventDefault();
+
+            const form = e.target;
+            const status = document.getElementById("contentStatus");
+            const formData = new FormData(form);
+
+            status.textContent = "Saving content...";
+
+            try {
+                await apiRequest("/admin/content", {
+                    method: "POST",
+                    body: formData
+                });
+
+                status.textContent = "Content saved successfully!";
+                form.reset();
+                loadContent();
+            } catch(error) {
+                status.textContent = error.message;
+            }
+        });
+
+        // LOAD CONTENT
+        async function loadContent() {
+            const container = document.getElementById("contentList");
+            container.textContent = "Loading content...";
+
+            try {
+                const data = await apiRequest("/admin/content");
+                const filter = document.getElementById("filterPage").value;
+
+                const items = (data.content || data).filter(item =>
+                    filter === "all" || item.page === filter
+                );
+
+                container.replaceChildren();
+
+                if (!items.length) {
+                    container.textContent = "No content found.";
+                    return;
+                }
+
+                items.forEach(item => {
+                    const card = document.createElement("div");
+                    card.className = "content-item";
+
+                    const title = document.createElement("h3");
+                    title.textContent = item.title;
+
+                    const description = document.createElement("p");
+                    description.textContent = item.description || "";
+
+                    const details = document.createElement("p");
+                    details.textContent =
+                        "Page: " + item.page +
+                        " | Location: " + (item.location || "Not specified");
+
+                    card.append(title, description, details);
+
+                    if (item.image_path) {
+                        const img = document.createElement("img");
+                        img.src = item.image_path;
+                        img.alt = item.title;
+                        card.appendChild(img);
+                    }
+
+                    if (item.video_path) {
+                        const video = document.createElement("video");
+                        video.src = item.video_path;
+                        video.controls = true;
+                        card.appendChild(video);
+                    }
+
+                    const editButton = document.createElement("button");
+                    editButton.className = "btn edit-btn";
+                    editButton.textContent = "Edit";
+                    editButton.addEventListener("click", () => editContent(item));
+
+                    const deleteButton = document.createElement("button");
+                    deleteButton.className = "btn delete-btn";
+                    deleteButton.textContent = "Delete";
+                    deleteButton.addEventListener("click", () => deleteContent(item.id));
+
+                    card.append(editButton, deleteButton);
+                    container.appendChild(card);
+                });
+
+            } catch(error) {
+                container.textContent = error.message;
+            }
+        }
+
+        // FILTER CONTENT
+        document.getElementById("filterPage").addEventListener("change", loadContent);
+
+        // EDIT CONTENT
+        async function editContent(item) {
+            const title = prompt("Enter new title:", item.title);
+            if (title === null) return;
+
+            const description = prompt("Enter new description:", item.description || "");
+            if (description === null) return;
+
+            const location = prompt("Enter new location:", item.location || "");
+            if (location === null) return;
+
+            const category = prompt("Enter new category:", item.category || "");
+            if (category === null) return;
+
+            const formData = new FormData();
+            formData.append("title", title);
+            formData.append("description", description);
+            formData.append("location", location);
+            formData.append("category", category);
+
+            try {
+                await apiRequest("/admin/content/" + item.id, {
+                    method: "PUT",
+                    body: formData
+                });
+
+                alert("Content updated successfully.");
+                loadContent();
+            } catch(error) {
+                alert(error.message);
+            }
+        }
+
+        // DELETE CONTENT
+        async function deleteContent(id) {
+            if (!confirm("Are you sure you want to delete this content?")) return;
+
+            try {
+                await apiRequest("/admin/content/" + id, {
+                    method: "DELETE"
+                });
+
+                alert("Content deleted successfully.");
+                loadContent();
+            } catch(error) {
+                alert(error.message);
+            }
+        }
+
+        // LOAD VISITOR MESSAGES
+        async function loadMessages() {
+            const container = document.getElementById("messageList");
+            container.textContent = "Loading messages...";
+
+            try {
+                const data = await apiRequest("/admin/messages");
+                const messages = data.messages || data;
+
+                container.replaceChildren();
+
+                if (!messages.length) {
+                    container.textContent = "No visitor messages found.";
+                    return;
+                }
+
+                messages.forEach(message => {
+                    const card = document.createElement("div");
+                    card.className = "message-item";
+
+                    const heading = document.createElement("h3");
+                    heading.textContent = message.name;
+
+                    const email = document.createElement("p");
+                    email.textContent = "Email: " + message.email;
+
+                    const content = document.createElement("p");
+                    content.textContent = message.message;
+
+                    const deleteButton = document.createElement("button");
+                    deleteButton.className = "btn delete-btn";
+                    deleteButton.textContent = "Delete Message";
+                    deleteButton.addEventListener("click", () => deleteMessage(message.id));
+
+                    card.append(heading, email, content, deleteButton);
+                    container.appendChild(card);
+                });
+
+            } catch(error) {
+                container.textContent = error.message;
+            }
+        }
+
+        // DELETE MESSAGE
+        async function deleteMessage(id) {
+            if (!confirm("Delete this message?")) return;
+
+            try {
+                await apiRequest("/admin/messages/" + id, {
+                    method: "DELETE"
+                });
+
+                loadMessages();
+            } catch(error) {
+                alert(error.message);
+            }
+        }
+
+        // START APPLICATION
+        checkLogin();
+    </script>
+
+</body>
+</html>
